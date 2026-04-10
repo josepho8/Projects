@@ -1,4 +1,4 @@
-# ✈️ Flight Price Analysis — When Is the Best Time to Book? ✈️ 
+# Flight Price Analysis — When Is the Best Time to Book? ✈️ 
 
 One of my passions, when I am not deep in data analysis, is traveling the world and experiencing different foods and cultures. But all travelers always encounter the same issue: **When is the best time to book your flight?**
 
