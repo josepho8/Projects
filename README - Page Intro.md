@@ -3,4 +3,4 @@ Welcome to my Data Analytics portfolio! This GitHub is a curated collection of p
 
 In addition to Python, I have experience using Excel, SQL, and Tableau to analyze and visualize data across a variety of domains.
 
-Feel free to reach out to connect via email at josepho30@yahoo.ca or on LinkedIn: https://www.linkedin.com/in/joseph-ogunleye/ .
+Feel free to reach out to connect via email at josephogunleye8@gmail.com or on LinkedIn: https://www.linkedin.com/in/joseph-ogunleye/ .
