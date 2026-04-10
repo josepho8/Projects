@@ -3,13 +3,13 @@
 One of my passions, when I am not deep in data analysis, is traveling the world and experiencing different foods and cultures. But all travelers always encounter the same issue: **When is the best time to book your flight?**
 
 This SQL-based exploratory data analysis project examines flight pricing patterns to answer the most critical barrier for any traveller.
+
+
 ---
 
 ## Project Overview
 
 This project analyzes 50,000 one-way flight price observations across 10 major routes to identify the optimal booking window, day of week, season, and departure time for the lowest fares. The analysis is structured as a series of progressive SQL queries moving from basic exploration to advanced window functions.
-
-**Key finding:** Booking **22–45 days before departure** yields average economy fares ~51% cheaper than last-minute bookings (0–7 days).
 
 ---
 
