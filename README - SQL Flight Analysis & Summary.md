@@ -120,7 +120,7 @@ Flights departing 6–8am tend to have lower average fares than midday or evenin
 
 ## 👤 Author
 
-**Joseph Ogunleye**
+**Joseph Ogunleye**,
 Financial Data Analyst | MSc Data Science & Analytics
 
 [LinkedIn](https://www.linkedin.com/in/joseph-ogunleye/) · [GitHub](https://github.com/josepho8) · [Portfolio](https://josepho8.github.io)
