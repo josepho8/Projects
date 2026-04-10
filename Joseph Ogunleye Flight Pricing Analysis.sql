@@ -4,6 +4,7 @@
 --  Dataset: Modelled on dilwong/FlightPrices (Kaggle)
 --           One-way flight prices scraped from Expedia
 --           Search window: April 16 – October 5, 2022
+--  Tool   : SQLite (compatible with PostgreSQL / DuckDB)
 -- ============================================================
 
 
@@ -21,7 +22,7 @@ SELECT
     ROUND(MIN(base_fare), 2)          AS min_fare,
     ROUND(MAX(base_fare), 2)          AS max_fare,
     ROUND(AVG(base_fare), 2)          AS avg_fare
-FROM flights;
+FROM flights ;
 
 -- 0.2 Cabin class breakdown
 SELECT
@@ -77,15 +78,18 @@ SELECT
     COUNT(*)                      AS num_flights,
     ROUND(AVG(base_fare), 2)      AS avg_fare,
     ROUND(MIN(base_fare), 2)      AS min_fare,
-    ROUND(MEDIAN(base_fare), 2)   AS median_fare,
+--     ROUND(MEDIAN(base_fare), 2)   AS median_fare,
     ROUND(MAX(base_fare), 2)      AS max_fare
 FROM flights
 WHERE cabin_class = 'economy'
 GROUP BY booking_window
 ORDER BY booking_window;
 
+-- NOTE: MEDIAN() is a SQLite extension (available in DuckDB/Postgres via PERCENTILE_CONT).
+-- If MEDIAN() is unavailable, replace with AVG() or use the percentile query in 1.2.
 
--- 1.2  Percentile fares by booking window 
+-- 1.2  Percentile fares by booking window (no MEDIAN required)
+--      Shows the 25th, 50th, and 75th percentile price for each window.
 WITH numbered AS (
     SELECT
         CASE
@@ -128,7 +132,7 @@ GROUP BY window_bucket
 ORDER BY window_bucket;
 
 -- 1.3  Price vs. booking window broken down by route
---      Does the sweet spot differ for domestic vs. international?
+--      Helps answer: does the sweet spot differ for domestic vs. international?
 SELECT
     origin || ' → ' || destination                   AS route,
     CASE
@@ -447,7 +451,7 @@ ORDER BY route, search_date;
 -- 7.2  Price percentile rank of each record within its route + cabin
 --      Useful for flagging "good deals" (bottom 20th percentile)
 SELECT
-    flight_id,
+--     flight_id,
     origin || ' → ' || destination AS route,
     cabin_class,
     departure_date,
